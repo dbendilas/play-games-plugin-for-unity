@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#if (UNITY_ANDROID || UNITY_IPHONE)
+#if (UNITY_ANDROID)
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.Multiplayer;
 using GooglePlayGames.BasicApi.SavedGame;
@@ -261,17 +261,6 @@ public class NativeClient : IPlayGamesClient {
             });
         }
 
-        return config;
-        #endif
-
-        #if UNITY_IPHONE
-        if (!GameInfo.IosClientIdInitialized()) {
-            throw new System.InvalidOperationException("Could not locate the OAuth Client ID, " +
-                "provide this by navigating to Google Play Games > iOS Setup");
-        }
-
-        var config = IosPlatformConfiguration.Create();
-        config.SetClientId(GameInfo.IosClientId);
         return config;
         #endif
     }

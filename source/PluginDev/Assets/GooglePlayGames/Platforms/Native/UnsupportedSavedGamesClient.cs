@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#if (UNITY_ANDROID || UNITY_IPHONE)
+#if (UNITY_ANDROID)
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using GooglePlayGames.OurUtils;
